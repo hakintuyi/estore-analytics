@@ -30,9 +30,32 @@ The project contain the following files and folders:
 - plugins: Add custom or community plugins for your project to this file. It is empty by default.
 - airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
 
-# Deploy the Project Locally
+## Deploy the Project Locally
 
-1. Start Airflow on your local machine by running 'astro dev start'.
+### Prerequisites
+
+- Docker
+- Python 3.x
+  \_ Astro CLI
+- Google Cloud Platform (GCP) account
+- Terraform
+
+##### Steps
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/samueloshio/estore-analytics.git
+
+```
+
+2. Start Airflow on your local machine by running.
+
+- Astro CLI and docker are required. 👉Follow [Astro CLI Doc](https://docs.astronomer.io/astro/cli/overview) to set up Astro CLI
+
+```bash
+astro dev start
+```
 
 This command will spin up 4 Docker containers on your machine, each for a different Airflow component:
 
@@ -43,7 +66,7 @@ This command will spin up 4 Docker containers on your machine, each for a differ
 
 2. Verify that all 4 Docker containers were created by running 'docker ps'.
 
-Note: Running 'astro dev start' will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://docs.astronomer.io/astro/test-and-troubleshoot-locally#ports-are-not-available).
+Note: Running 'astro dev start' will start the project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432. If you already have either of those ports allocated, you can either [stop your existing Docker containers or change the port](https://docs.astronomer.io/astro/test-and-troubleshoot-locally#ports-are-not-available).
 
 3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with 'admin' for both your Username and Password.
 
