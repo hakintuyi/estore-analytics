@@ -1,5 +1,5 @@
 locals {
-  data_lake_bucket = "nyc-taxi-data"
+  data_lake_bucket = "estore-data"
 }
 
 variable "credentials" {
